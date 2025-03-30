@@ -726,7 +726,7 @@ section,
   margin-right: 0;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 650px) {
   .portfolio .portfolio-filters li {
     font-size: 14px;
     margin: 0 0 10px 0;
