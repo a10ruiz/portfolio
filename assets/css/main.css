@@ -748,7 +748,7 @@ section,
   z-index: 3;
   transform: translateY(-50%, -50%);
   color: #fff;
-  opacity: 0;
+  opacity: 1;
   visibility: hidden;
   transition: 0.3s all ease;
 }
