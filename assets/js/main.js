@@ -48,6 +48,7 @@
   /**
    * Preloader
    */
+
   const preloader = document.querySelector('#preloader');
   if (preloader) {
     window.addEventListener('load', () => {
@@ -83,11 +84,16 @@
     AOS.init({
       duration: 600,
       easing: 'ease-in-out',
-      once: true,
+      once: false,
       mirror: false
     });
   }
-  window.addEventListener('load', aosInit);
+  window.addEventListener('load', () => {
+  setTimeout(() => {
+    aosInit();
+  }, 300); // Espera 300ms antes de iniciar AOS
+});
+
 
   /**
    * Init typed.js
