@@ -726,7 +726,7 @@ section,
   margin-right: 0;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 768px) {
   .portfolio .portfolio-filters li {
     font-size: 14px;
     margin: 0 0 10px 0;
@@ -748,7 +748,7 @@ section,
   z-index: 3;
   transform: translateY(-50%, -50%);
   color: #fff;
-  opacity: 1;
+  opacity: 1 !important;
   visibility: hidden;
   transition: 0.3s all ease;
 }
