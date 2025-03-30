@@ -739,6 +739,7 @@ section,
  
 }
 
+@media (max-width: 768px) {
 .portfolio .portfolio-item .work-info {
   position: absolute;
   top: 50%;
@@ -750,6 +751,7 @@ section,
   color: #fff;
   opacity: 1 !important;
   transition: 0.3s all ease;
+}
 }
 
 .portfolio .portfolio-item img {
