@@ -748,7 +748,7 @@ section,
   z-index: 3;
   transform: translateY(-50%, -50%);
   color: #fff;
-  opacity: 0;
+  opacity: 1;
   visibility: hidden;
   transition: 0.3s all ease;
 }
@@ -769,7 +769,7 @@ section,
 }
 
 .portfolio .portfolio-item .portfolio-info {
-  opacity: 1; /* Invisible inicialmente */
+  opacity: 0; /* Invisible inicialmente */
   position: absolute; /* Posicionamiento absoluto */
   left: 0; /* Ocupa todo el ancho */
   right: 0; 
