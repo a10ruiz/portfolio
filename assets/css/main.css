@@ -739,21 +739,6 @@ section,
  
 }
 
-@media (max-width: 768px) {
-.portfolio .portfolio-item .work-info {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 90%;
-  text-align: center;
-  z-index: 3;
-  transform: translateY(-50%, -50%);
-  color: #fff;
-  opacity: 1 !important;
-  transition: 0.3s all ease;
-}
-}
-
 .portfolio .portfolio-item img {
   width: auto; /* Deja que la imagen conserve sus proporciones originales */
   height: 350px; /* Establece una altura fija (ajústala a tu necesidad) */
@@ -786,6 +771,14 @@ section,
   justify-content: center; /* Centra el contenido verticalmente */
   text-align: center; /* Centra el texto en su contenedor */
   overflow: hidden; /* Evita que el texto se desborde */
+}
+
+/* Asegurar que sea visible en móviles */
+@media (max-width: 768px) {
+  .portfolio .portfolio-item .work-info {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 }
 
 .portfolio .portfolio-item .portfolio-info h4 {
