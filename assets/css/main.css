@@ -775,7 +775,7 @@ section,
 
 /* Asegurar que sea visible en móviles */
 @media (max-width: 768px) {
-  .portfolio .portfolio-item .work-info {
+  .portfolio .portfolio-item .info {
     opacity: 1 !important;
     visibility: visible !important;
   }
