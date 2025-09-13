@@ -153,13 +153,16 @@ class VideoGallery extends HTMLElement {
       this.querySelector('.prev-btn').addEventListener('click', () => this.change(-1));
       this.querySelector('.next-btn').addEventListener('click', () => this.change(1));
 
+      this.isMuted = true; // Add this line to track audio state
+
       this.audioBtn = this.querySelector('.audio-btn');
       this.audioBtn.addEventListener('click', () => {
+        this.isMuted = !this.isMuted;
         const currentVideo = this.videoElements[this.index];
-        currentVideo.muted = !currentVideo.muted;
-        currentVideo.volume = currentVideo.muted ? 0 : 1;
-        this.audioBtn.textContent = currentVideo.muted ? '🔊 Activar sonido' : '🔇 Desactivar sonido';
-        if (!currentVideo.muted) {
+        currentVideo.muted = this.isMuted;
+        currentVideo.volume = this.isMuted ? 0 : 1;
+        this.audioBtn.textContent = this.isMuted ? '🔊 Activar sonido' : '🔇 Desactivar sonido';
+        if (!this.isMuted) {
           currentVideo.play().catch(() => {});
         }
       });
@@ -177,7 +180,7 @@ class VideoGallery extends HTMLElement {
         video.className = '';
         video.style.opacity = '0';
         video.style.zIndex = '1';
-        video.muted = true;
+        video.muted = this.isMuted; // Change this line
       });
 
       const prevIndex = (this.index - 1 + len) % len;
