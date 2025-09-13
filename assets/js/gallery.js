@@ -156,9 +156,12 @@ class VideoGallery extends HTMLElement {
       this.audioBtn = this.querySelector('.audio-btn');
       this.audioBtn.addEventListener('click', () => {
         const currentVideo = this.videoElements[this.index];
-        currentVideo.muted = false;
-        currentVideo.volume = 1;
-        currentVideo.play().catch(() => {});
+        currentVideo.muted = !currentVideo.muted;
+        currentVideo.volume = currentVideo.muted ? 0 : 1;
+        this.audioBtn.textContent = currentVideo.muted ? '🔊 Activar sonido' : '🔇 Desactivar sonido';
+        if (!currentVideo.muted) {
+          currentVideo.play().catch(() => {});
+        }
       });
 
       this.linkBtn = this.querySelector('.link-btn');
