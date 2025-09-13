@@ -111,15 +111,28 @@ class VideoGallery extends HTMLElement {
 
     initGallery() {
       this.videos = [
-        'assets/img/videos/tiktok1.mp4',
         'assets/img/videos/tiktok2.mp4',
+        'assets/img/videos/tiktok_tierrasraras.mp4',
+        'assets/img/videos/tiktok1.mp4',
         'assets/img/videos/tiktok3.mp4',
+        'assets/img/videos/tiktok_pajaros.mp4',
+        'assets/img/videos/tiktok_rivera.mp4',
+        'assets/img/videos/tiktok_sena.mp4',
+        'assets/img/videos/tiktok_feli.mp4',
+
+
       ];
 
       this.urls = [
-        'https://www.tiktok.com/@malditobulo/video/7501320102122360086?lang=es',
         'https://www.tiktok.com/@malditobulo/video/7489120681028750614?lang=es',
+        'https://www.tiktok.com/@malditobulo/video/7548120380100201750?lang=es',
+        'https://www.tiktok.com/@malditobulo/video/7501320102122360086?lang=es',
         'https://www.tiktok.com/@malditobulo/video/7441647775441292577?lang=es',
+        'https://www.tiktok.com/@malditobulo/video/7373948759111126305?lang=es',
+        'https://www.tiktok.com/@malditobulo/video/7439786392080682272?lang=es',
+        'https://www.tiktok.com/@malditobulo/video/7394861570234289441?lang=es',
+        'https://www.tiktok.com/@malditobulo/video/7352916994720632097?lang=es',
+
       ];
 
       this.index = 0;
