@@ -818,3 +818,31 @@ section,
   opacity: 1;
   bottom: 0;
 }
+
+/*--------------------------------------------------------------
+# Códigos Section
+--------------------------------------------------------------*/
+.card {
+  height: 100%;
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.btn-outline-dark {
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+}
