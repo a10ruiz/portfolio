@@ -798,7 +798,8 @@ section,
 
 .portfolio .portfolio-item img {
   width: 100%;
-  height: 200px;
+  aspect-ratio: 16 / 10; /* proporción fija; sube o baja este valor (p. ej. 3/2, 4/3) para fotos más altas o más bajas */
+  height: auto;
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
@@ -864,6 +865,11 @@ section,
 
 /* Eliminar el overlay antiguo en desktop, mantener accesibilidad */
 .portfolio .portfolio-item .portfolio-info {
+  display: none;
+}
+
+/* Tarjetas ocultas por el filtro (sustituye a Isotope) */
+.portfolio .portfolio-item.item-hidden {
   display: none;
 }
 
