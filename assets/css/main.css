@@ -688,9 +688,53 @@ section,
   background-color: var(--accent-color);
 }
 
+/* ============================================================
+   CAMBIOS PARA main.css
+   Busca el bloque "# Portfolio Section" y REEMPLÁZALO
+   por este bloque completo
+   ============================================================ */
+
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
+
+/* Barra de premios */
+.portfolio-awards {
+  border-top: 3px solid var(--accent-color);
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  padding: 10px 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.portfolio-awards .awards-label {
+  font-family: var(--nav-font);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.portfolio-awards .award-item {
+  font-family: var(--nav-font);
+  font-size: 12px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.portfolio-awards .award-item::before {
+  content: "★";
+  color: var(--accent-color);
+  font-size: 11px;
+}
+
+/* Filtros */
 .portfolio .portfolio-filters {
   padding: 0;
   margin: 0 auto 20px auto;
@@ -718,14 +762,6 @@ section,
   background-color: var(--accent-color);
 }
 
-.portfolio .portfolio-filters li:first-child {
-  margin-left: 0;
-}
-
-.portfolio .portfolio-filters li:last-child {
-  margin-right: 0;
-}
-
 @media (max-width: 768px) {
   .portfolio .portfolio-filters li {
     font-size: 14px;
@@ -733,90 +769,107 @@ section,
   }
 }
 
-.portfolio .portfolio-item {
-  position: relative;
-  overflow: hidden;
- 
+/* Grid de tarjetas: rejilla editorial con separadores de 1px */
+.portfolio .isotope-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: color-mix(in srgb, var(--default-color), transparent 85%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
-.portfolio .portfolio-item img {
-  width: auto; /* Deja que la imagen conserve sus proporciones originales */
-  height: 350px; /* Establece una altura fija (ajústala a tu necesidad) */
-  object-fit: cover; /* Asegura que la imagen no se deforme, y corta la parte que sobrepase */
-  max-width: 100%; /* Evita que la imagen se estire más allá de su contenedor */
-  display: block; /* Elimina cualquier espacio extra debajo de la imagen */
-  transition: transform 0.3s ease; /* Transición suave en el hover */
-}
-
-.portfolio .portfolio-item a {
-  display: block; /* Asegura que el enlace ocupe el área completa */
-  text-decoration: none; /* Elimina el subrayado del texto */
-  color: inherit; /* Usa los colores del diseño para el texto */
-}
-
-.portfolio .portfolio-item .portfolio-info {
-  opacity: 0; /* Invisible inicialmente */
-  position: absolute; /* Posicionamiento absoluto */
-  left: 0; /* Ocupa todo el ancho */
-  right: 0; 
-  top: 0; /* Ocupa todo el alto */
-  bottom: 0; 
-  z-index: 3; /* Encima de otros elementos */
-  transition: all ease-in-out 0.5s; /* Animación */
-  background: rgba(255, 255, 255, 0.712);
-  padding: 15px; /* Espaciado interno */
-  display: flex; /* Flexbox para centrar contenido */
-  flex-direction: column; /* Asegura que el contenido esté en una sola columna */
-  align-items: center; /* Centra el contenido horizontalmente */
-  justify-content: center; /* Centra el contenido verticalmente */
-  text-align: center; /* Centra el texto en su contenedor */
-  overflow: hidden; /* Evita que el texto se desborde */
-}
-
-/* Asegurar que sea visible en móviles */
-@media (max-width: 768px) {
-  .portfolio .portfolio-item .portfolio-info {
-    opacity: 1 !important;
-    visibility: visible !important;
+@media (max-width: 992px) {
+  .portfolio .isotope-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.portfolio .portfolio-item .portfolio-info h4 {
-  font-size: 20px;
-  font-weight: 700;
-  color: black;
+@media (max-width: 576px) {
+  .portfolio .isotope-container {
+    grid-template-columns: 1fr;
+  }
 }
 
-.portfolio .portfolio-item .portfolio-info p {
-  color: black;
-  font-size: 14px;
-  margin-bottom: 0;
+/* Tarjeta individual */
+.portfolio .portfolio-item {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-color);
+  display: flex;
+  flex-direction: column;
+  margin: 0 !important;
+  width: 100% !important;
 }
 
-.portfolio .portfolio-item .portfolio-info .preview-link,
-.portfolio .portfolio-item .portfolio-info .details-link {
-  position: absolute;
-  right: 50px;
-  font-size: 24px;
-  top: calc(50% - 14px);
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  transition: 0.3s;
-  line-height: 0;
+.portfolio .portfolio-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
-.portfolio .portfolio-item .portfolio-info .preview-link:hover,
-.portfolio .portfolio-item .portfolio-info .details-link:hover {
+.portfolio .portfolio-item:hover img {
+  transform: scale(1.03);
+}
+
+/* Etiqueta de medio (ElDiario.es, Maldita.es...) */
+.portfolio .portfolio-item .card-medio {
+  font-family: var(--nav-font);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--accent-color);
+  font-weight: 700;
+  padding: 12px 14px 0;
 }
 
-.portfolio .portfolio-item .portfolio-info .details-link {
-  right: 14px;
-  font-size: 28px;
+/* Título */
+.portfolio .portfolio-item .card-title {
+  font-family: var(--heading-font);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: var(--heading-color);
+  padding: 5px 14px 8px;
 }
 
-.portfolio .portfolio-item:hover .portfolio-info {
-  opacity: 1;
-  bottom: 0;
+/* Descripción */
+.portfolio .portfolio-item .card-desc {
+  font-family: var(--default-font);
+  font-size: 12px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  line-height: 1.5;
+  padding: 0 14px 10px;
+  flex: 1;
+}
+
+/* Badge de premio */
+.portfolio .portfolio-item .card-premio {
+  font-family: var(--nav-font);
+  font-size: 10px;
+  color: var(--accent-color);
+  padding: 0 14px 12px;
+  font-weight: 600;
+}
+
+/* Enlace hover — overlay simplificado */
+.portfolio .portfolio-item a {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+}
+
+.portfolio .portfolio-item a:hover .card-title {
+  color: var(--accent-color);
+  transition: color 0.2s;
+}
+
+/* Eliminar el overlay antiguo en desktop, mantener accesibilidad */
+.portfolio .portfolio-item .portfolio-info {
+  display: none;
 }
 
 /*--------------------------------------------------------------
