@@ -119,8 +119,9 @@ class VideoGallery extends HTMLElement {
         'assets/img/videos/tiktok_rivera.mp4',
         'assets/img/videos/tiktok_sena.mp4',
         'assets/img/videos/tiktok_feli.mp4',
-
-
+        'assets/img/videos/instagram_ainhoa.mp4',
+        'assets/img/videos/instagram_eldiario_1.mp4',
+        'assets/img/videos/instagram_eldiario_2.mp4',
       ];
 
       this.urls = [
@@ -132,7 +133,9 @@ class VideoGallery extends HTMLElement {
         'https://www.tiktok.com/@malditobulo/video/7439786392080682272?lang=es',
         'https://www.tiktok.com/@malditobulo/video/7394861570234289441?lang=es',
         'https://www.tiktok.com/@malditobulo/video/7352916994720632097?lang=es',
-
+        'https://www.instagram.com/p/DPCBWhQDBR1/',
+        'https://www.instagram.com/eldiarioes/reel/DbGoG3YulgU/',
+        'https://www.instagram.com/eldiarioes/reel/DafCsi9OFV7/',
       ];
 
       this.index = 0;
@@ -200,7 +203,11 @@ class VideoGallery extends HTMLElement {
       nextVideo.classList.add('visible', 'next');
       nextVideo.style.opacity = '0.3';
 
-      this.linkBtn.href = this.urls[this.index];
+      const currentUrl = this.urls[this.index];
+      this.linkBtn.href = currentUrl;
+      this.linkBtn.textContent = currentUrl.includes('instagram')
+        ? '🔗 Ver en Instagram'
+        : '🔗 Ver en TikTok';
     }
 
     change(direction) {
